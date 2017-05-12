@@ -2,12 +2,14 @@
 Description=Smartphone Controlled Doorlock Service
 
 [Service]
-ExecStart=/usr/local/bin/node /home/pi/Smartphone-Doorlock/Smartphone-Doorlock/doorlock.js
-WorkingDirectory=/home/pi/Smartphone-Doorlock/Smartphone-Doorlock   # Required on some systems
+ExecStart=/usr/bin/node /home/pi/Smartphone-Doorlock/Smartphone-Doorlock/doorlock.js
+WorkingDirectory=/home/pi/Smartphone-Doorlock/Smartphone-Doorlock
 Restart=always
-RestartSec=10                       # Restart service after 10 seconds if node service crashes
-User=pi
-Group=pi
+RestartSec=10
+StandardOutput=syslog
+StandardError=syslog
+User=root
+Group=root
 
 [Install]
 WantedBy=multi-user.target
