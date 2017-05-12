@@ -1,0 +1,13 @@
+[Unit]
+Description=Smartphone Controlled Doorlock Service
+
+[Service]
+ExecStart=/usr/local/bin/node /home/pi/Smartphone-Doorlock/Smartphone-Doorlock/doorlock.js
+WorkingDirectory=/home/pi/Smartphone-Doorlock/Smartphone-Doorlock   # Required on some systems
+Restart=always
+RestartSec=10                       # Restart service after 10 seconds if node service crashes
+User=pi
+Group=pi
+
+[Install]
+WantedBy=multi-user.target
